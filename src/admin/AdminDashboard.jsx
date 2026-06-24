@@ -47,7 +47,7 @@ export default function AdminDashboard() {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="h-[80vh] flex items-center justify-center">Loading...</h1>;
   }
 
   return (
