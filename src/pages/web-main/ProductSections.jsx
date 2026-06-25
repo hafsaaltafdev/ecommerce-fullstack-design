@@ -68,14 +68,14 @@ export default function ProductSections() {
               <div
                 key={product._id}
                 onClick={() => navigate(`/product/${product._id}`)}
-                className="w-[42%] md:w-[227px] h-[160px] md:h-[100%] shrink-0 md:shrink p-[2px] border-1 border-[#E0E0E0] relative flex flex-col items-center md:block"
+                className="w-[42%] md:w-[227px] h-[155px] md:h-[100%] shrink-0 md:shrink p-1 border-1 border-[#E0E0E0] relative flex flex-col items-center md:block"
               >
                 <img
-                  className="w-[92px] h-[92px] md:w-[80px] md:h-[80px] object-contain md:absolute md:right-1 md:bottom-1"
+                  className="w-[95px] h-[95px] md:w-[82px] md:h-[82px] object-contain md:absolute md:right-1 md:bottom-1"
                   src={product.image}
                   alt={product.name}
                 />
-                <div className="flex flex-col gap-[4px] mt-[6px] md:mt-[10px] md:ml-[12px] text-center md:text-left">
+                <div className="flex flex-col gap-[4px] mt-[8px] md:mt-[12px] md:ml-[12px] text-center md:text-left">
                   <h3 className="text-black text-[13px] md:text-[16px]">{product.name}</h3>
                   <p className="text-[#8B96A5] text-[13px]">${product.price}</p>
                 </div>
