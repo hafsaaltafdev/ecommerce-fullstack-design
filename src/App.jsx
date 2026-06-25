@@ -49,7 +49,7 @@ function App() {
               </ProtectedRoute>
             }></Route>
           <Route path="/profile"
-            element={<ProfilePage />}
+            element={<MyProfile/>}
           />
         </Route>
         <Route path="/signup" element={<Signup />} />

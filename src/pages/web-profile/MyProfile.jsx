@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
 
-export default function ProfilePage() {
+export default function MyProfile() {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
