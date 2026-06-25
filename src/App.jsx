@@ -18,6 +18,7 @@ import AddProduct from "./admin/AddProduct";
 import EditProduct from "./admin/EditProduct";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
+import MyProfile from "./pages/web-profile/MyProfile";
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
                 <MyCart />
               </ProtectedRoute>
             }></Route>
+          <Route path="/profile"
+            element={<ProfilePage />}
+          />
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

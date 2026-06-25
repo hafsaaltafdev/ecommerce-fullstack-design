@@ -9,7 +9,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("user"));
-   const role = localStorage.getItem("role");
+  const role = localStorage.getItem("role");
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -90,8 +90,10 @@ export default function Navbar() {
         {/* Icons */}
         <div className="flex items-center gap-[16px] md:gap-[23px] text-[#8B96A5] text-[12px]">
           <div className="hidden md:flex flex-col gap-[7px] items-center">
-            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z" fill="#8B96A5" /></svg>
-            <span>Profile</span>
+            <Link to="/profile">
+              <svg width="20" height="19" viewBox="0 0 20 19" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z" fill="#8B96A5" /></svg>
+              <span>Profile</span>
+            </Link>
           </div>
           <div className="hidden md:block">
             <Link to="/products" className="flex flex-col items-center">
@@ -115,7 +117,9 @@ export default function Navbar() {
           </Link>
           {/* Mobile: Profile icon */}
           <div className="md:hidden">
-            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z" fill="#8B96A5" /></svg>
+            <Link to="/profile">
+              <svg width="20" height="19" viewBox="0 0 20 19" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z" fill="#8B96A5" /></svg>
+            </Link>
           </div>
         </div>
       </div>
@@ -187,13 +191,13 @@ export default function Navbar() {
           </div>
           {user ? (
             <>
-            <p onClick={handleLogout} className="text-[15px] text-gray-700 font-medium">Log out</p>
-            {role === "admin" && (
+              <p onClick={handleLogout} className="text-[15px] text-gray-700 font-medium">Log out</p>
+              {role === "admin" && (
                 <Link to="/admin/dashboard" className="w-full text-black text-[14px] font-medium">
                   ➡️ Admin Panel
                 </Link>
               )}
-            </>            
+            </>
           ) : (
             <div>
               <Link to="/login" onClick={() => setMenuOpen(false)} className="text-[15px] text-gray-700 font-medium">Sign in</Link>
