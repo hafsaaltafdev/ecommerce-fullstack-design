@@ -49,8 +49,11 @@ function App() {
               </ProtectedRoute>
             }></Route>
           <Route path="/profile"
-            element={<MyProfile/>}
-          />
+            element={
+              <ProtectedRoute>
+                <MyProfile />
+              </ProtectedRoute>
+            }></Route>
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
