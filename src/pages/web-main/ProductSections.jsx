@@ -75,7 +75,7 @@ export default function ProductSections() {
                   src={product.image}
                   alt={product.name}
                 />
-                <div className="flex flex-col gap-[4px] mt-[8px] md:mt-[12px] md:ml-[12px] text-center md:text-left">
+                <div className="flex flex-col gap-[4px] mt-[6px] md:mt-[10px] md:ml-[12px] text-center md:text-left">
                   <h3 className="text-black text-[13px] md:text-[16px]">{product.name}</h3>
                   <p className="text-[#8B96A5] text-[13px]">${product.price}</p>
                 </div>
