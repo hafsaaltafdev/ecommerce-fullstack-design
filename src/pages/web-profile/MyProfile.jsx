@@ -20,7 +20,7 @@ export default function MyProfile() {
         },
       });
 
-      setUser(res.data.user);
+      setUser(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -43,50 +43,64 @@ export default function MyProfile() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
-
-      {/* User Info */}
-      <div className="bg-white shadow rounded p-6 mb-6">
-        <h2 className="text-2xl font-bold mb-4">
+    <div className="max-w-6xl mx-auto p-6">
+      {/* Profile Card */}
+      <div className="bg-white shadow-lg rounded-xl p-6 mb-6">
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">
           My Profile
         </h2>
 
-        <p><strong>Name:</strong> {user?.name}</p>
-        <p><strong>Email:</strong> {user?.email}</p>
-        <p><strong>Role:</strong> {user?.role}</p>
+        <div className="space-y-2">
+          <p>
+            <span className="font-semibold">Name:</span>{" "}
+            {user?.name}
+          </p>
+
+          <p>
+            <span className="font-semibold">Email:</span>{" "}
+            {user?.email}
+          </p>
+
+          <p>
+            <span className="font-semibold">Role:</span>{" "}
+            {user?.role}
+          </p>
+        </div>
       </div>
 
-      {/* Cart Items */}
-      <div className="bg-white shadow rounded p-6">
-        <h2 className="text-2xl font-bold mb-4">
+      {/* Cart Section */}
+      <div className="bg-white shadow-lg rounded-xl p-6">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">
           My Cart Items
         </h2>
 
         {cartItems.length === 0 ? (
-          <p>No items in cart</p>
+          <p className="text-gray-500">
+            No items in cart
+          </p>
         ) : (
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {cartItems.map((item) => (
               <div
                 key={item._id}
-                className="flex items-center gap-4 border-b pb-4"
+                className="border rounded-lg p-4 flex gap-4"
               >
                 <img
                   src={item.productId?.image}
-                  alt=""
-                  className="w-20 h-20 object-cover"
+                  alt={item.productId?.name}
+                  className="w-24 h-24 object-cover rounded"
                 />
 
                 <div>
-                  <h3 className="font-semibold">
+                  <h3 className="font-semibold text-lg">
                     {item.productId?.name}
                   </h3>
 
-                  <p>
+                  <p className="text-gray-600">
                     Price: ${item.productId?.price}
                   </p>
 
-                  <p>
+                  <p className="text-gray-600">
                     Quantity: {item.quantity}
                   </p>
                 </div>
@@ -95,7 +109,6 @@ export default function MyProfile() {
           </div>
         )}
       </div>
-
     </div>
   );
 }
