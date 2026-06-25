@@ -60,11 +60,6 @@ export default function MyProfile() {
             <span className="font-semibold">Email:</span>{" "}
             {user?.email}
           </p>
-
-          <p>
-            <span className="font-semibold">Role:</span>{" "}
-            {user?.role}
-          </p>
         </div>
       </div>
 
